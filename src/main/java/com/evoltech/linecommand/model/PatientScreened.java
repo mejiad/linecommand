@@ -8,11 +8,14 @@ import lombok.NoArgsConstructor;
 
 
 
+
 // @Document
 @Data
 // @AllArgsConstructor
 @NoArgsConstructor
 public class PatientScreened {
+    private static final String DELIMITER = "|";
+    private static final String SEPARATOR = "\n";
     private String id;
     String  patientId;
     String  gender;
@@ -32,7 +35,7 @@ public class PatientScreened {
     float alkaline_phosphatase_serum;
     float aspartate_transaminase_sgot_ast_serum;
     float basophils;
-    float blood_group;
+    String blood_group;
     float blood_urea;
     float blood_urea_nitrogen;
     float cholesterol_serum;
@@ -110,13 +113,13 @@ public class PatientScreened {
 
 
     public void setTests(
-            float a_g_ratio,
+            Float a_g_ratio,
             float alanine_transaminase_sgpt_alt_serum,
             float albumin_serum,
             float alkaline_phosphatase_serum,
             float aspartate_transaminase_sgot_ast_serum,
             float basophils,
-            float blood_group,
+            String blood_group,
             float blood_urea,
             float blood_urea_nitrogen,
             float cholesterol_serum,
@@ -222,175 +225,188 @@ public class PatientScreened {
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
-        sb.append("patientId:");
         sb.append(this.patientId);
-        sb.append(" Gender:");
+        sb.append(DELIMITER);
+
         sb.append(this.gender);
-        sb.append(" Village:");
+        sb.append(DELIMITER);
+
+        sb.append(this.familyId);
+        sb.append(DELIMITER);
+
+        sb.append(this.block);
+        sb.append(DELIMITER);
+
+        sb.append(this.district);
+        sb.append(DELIMITER);
+
         sb.append(this.village);
-        sb.append(" BirthDate:");
+        sb.append(DELIMITER);
+
         sb.append(this.birthDate);
-        sb.append(" BMI:");
+        sb.append(DELIMITER);
+
         sb.append(this.bmi);
+        sb.append(DELIMITER);
 
-        sb.append(" a_g_ratio");
         sb.append(this.a_g_ratio);
+        sb.append(DELIMITER);
 
-        sb.append(" alanine_transaminase_sgpt_alt_serum");
         sb.append(this.alanine_transaminase_sgpt_alt_serum);
+        sb.append(DELIMITER);
 
-        sb.append(" albumin_serum");
         sb.append(this.albumin_serum);
+        sb.append(DELIMITER);
 
-        sb.append(" alkaline_phosphatase_serum:");
         sb.append(this.alkaline_phosphatase_serum);
+        sb.append(DELIMITER);
 
-        sb.append(" aspartate_transaminase_sgot_ast_serum");
         sb.append(this.aspartate_transaminase_sgot_ast_serum);
+        sb.append(DELIMITER);
 
-        sb.append(" basophils");
         sb.append(this.basophils);
+        sb.append(DELIMITER);
 
-        sb.append(" blood_group");
         sb.append(this.blood_group);
+        sb.append(DELIMITER);
 
-        sb.append(" blood_urea:");
         sb.append(this.blood_urea);
+        sb.append(DELIMITER);
 
-        sb.append(" blood_urea_nitrogen");
         sb.append(this.blood_urea_nitrogen);
+        sb.append(DELIMITER);
 
-        sb.append(" cholesterol_serum");
         sb.append(this.cholesterol_serum);
+        sb.append(DELIMITER);
 
-        sb.append(" creatinine_serum");
         sb.append(this.creatinine_serum);
+        sb.append(DELIMITER);
 
-        sb.append(" direct_bilirubin");
         sb.append(this.direct_bilirubin);
+        sb.append(DELIMITER);
 
-        sb.append(" direct_bilirubin_serum");
         sb.append(this.direct_bilirubin_serum);
+        sb.append(DELIMITER);
 
-        sb.append( "eosinophils");
         sb.append(this.eosinophils);
+        sb.append(DELIMITER);
 
-        sb.append( " folic_acid_assay:");
         sb.append(this.folic_acid_assay);
+        sb.append(DELIMITER);
 
-        sb.append(" globulin_serum:");
         sb.append(this.globulin_serum);
+        sb.append(DELIMITER);
 
-        sb.append( " hb_a1c:");
         sb.append(this.hb_a1c);
+        sb.append(DELIMITER);
 
-        sb.append( " hdl_cholesterol_serum:");
         sb.append(this.hdl_cholesterol_serum);
+        sb.append(DELIMITER);
 
-        sb.append( " hemoglobin:");
         sb.append(this.hemoglobin);
+        sb.append(DELIMITER);
 
-        sb.append( " indirect_bilirubin_serum:");
         sb.append(this.indirect_bilirubin_serum);
+        sb.append(DELIMITER);
 
-        sb.append( " ldl_hdl_cholesterol_ratio:");
         sb.append(this.ldl_hdl_cholesterol_ratio);
+        sb.append(DELIMITER);
 
-        sb.append( " ldl_cholesterol_serum:");
         sb.append(this.ldl_cholesterol_serum);
+        sb.append(DELIMITER);
 
-        sb.append( " lymphocytes:");
         sb.append(this.lymphocytes);
+        sb.append(DELIMITER);
 
-        sb.append( " m_c_h:");
         sb.append(this.m_c_h);
+        sb.append(DELIMITER);
 
-        sb.append( " m_c_h_c:");
         sb.append(this.m_c_h_c);
+        sb.append(DELIMITER);
 
-        sb.append( " m_c_v:");
         sb.append(this.m_c_v);
+        sb.append(DELIMITER);
 
-        sb.append( " monocytes:");
         sb.append(this.monocytes);
+        sb.append(DELIMITER);
 
-        sb.append( " neutrophils:");
         sb.append(this.neutrophils);
+        sb.append(DELIMITER);
 
-        sb.append( " p_c_v:");
         sb.append(this.p_c_v);
+        sb.append(DELIMITER);
 
-        sb.append( " platelet_count.");
         sb.append(this.platelet_count);
+        sb.append(DELIMITER);
 
-        sb.append( " potassium");
         sb.append(this.potassium);
+        sb.append(DELIMITER);
 
-        sb.append( " prostate_specific_antigen_psa:");
         sb.append(this.prostate_specific_antigen_psa);
+        sb.append(DELIMITER);
 
-        sb.append( " random_blood_sugar:");
         sb.append(this.random_blood_sugar);
+        sb.append(DELIMITER);
 
-        sb.append( " r_d_w_cv:");
         sb.append(this.r_d_w_cv);
+        sb.append(DELIMITER);
 
-        sb.append( " serum:");
         sb.append(this.serum);
+        sb.append(DELIMITER);
 
-        sb.append( " sgot_sgpt_ratio:");
         sb.append(this.sgot_sgpt_ratio);
+        sb.append(DELIMITER);
 
-        sb.append( "sodium");
         sb.append(this.sodium);
+        sb.append(DELIMITER);
 
-        sb.append( " t3_tri_iodothyronine:");
         sb.append(this.t3_tri_iodothyronine);
+        sb.append(DELIMITER);
 
-        sb.append( " t4_thyroxine:");
         sb.append(this.t4_thyroxine);
+        sb.append(DELIMITER);
 
-        sb.append( " total_bilirubin:");
         sb.append(this.total_bilirubin);
+        sb.append(DELIMITER);
 
-        sb.append( " total_bilirubin_serum:");
         sb.append(this.total_bilirubin_serum);
+        sb.append(DELIMITER);
 
-        sb.append( " total_cholesterol_hdl_cholesterol_ratio:");
         sb.append(this.total_cholesterol_hdl_cholesterol_ratio);
+        sb.append(DELIMITER);
 
-        sb.append( " total_cholesterol_serum:");
         sb.append(this.total_cholesterol_serum);
+        sb.append(DELIMITER);
 
-        sb.append( " total_protein_serum:");
         sb.append(this.total_protein_serum);
+        sb.append(DELIMITER);
 
-        sb.append( " total_rbc_count:");
         sb.append(this.total_rbc_count);
+        sb.append(DELIMITER);
 
-        sb.append( " total_wbc_count:");
         sb.append(this.total_wbc_count);
+        sb.append(DELIMITER);
 
-        sb.append( " triglyceride_serum:");
         sb.append(this.triglyceride_serum);
+        sb.append(DELIMITER);
 
-        sb.append( " tsh:");
         sb.append(this.tsh);
+        sb.append(DELIMITER);
 
-        sb.append( " uric_acid_serum:");
         sb.append(this.uric_acid_serum);
+        sb.append(DELIMITER);
 
-        sb.append( " vit_d_assay:");
         sb.append(this.vit_d_assay);
+        sb.append(DELIMITER);
 
-        sb.append( " vitamin_a_retinol:");
         sb.append(this.vitamin_a_retinol);
+        sb.append(DELIMITER);
 
-        sb.append( " vitamin_b12:");
         sb.append(this.vitamin_b12);
+        sb.append(DELIMITER);
 
-        sb.append(" vldl_cholesterol_serum:");
         sb.append(this.vldl_cholesterol_serum);
+        sb.append(SEPARATOR);
 
         return(sb.toString());
     }
