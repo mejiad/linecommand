@@ -1,0 +1,51 @@
+1 A/G Ratio, a_g_ratio
+2 Alanine Transaminase (SGPT/ALT) - Serum, alanine_transaminase_sgpt_alt_serum
+3 Albumin - Serum, albumin_serum
+4 Alkaline Phosphatase - Serum, alkaline_phosphatase_serum
+5 Aspartate Transaminase (SGOT/AST) - Serum, aspartate_transaminase_sgot_ast_serum
+6 Basophils, basophils
+7 Blood Group, blood_group
+8 Blood Urea, blood_urea
+9 Blood Urea Nitrogen, blood_urea_nitrogen
+10 Cholesterol - Serum, cholesterol_serum
+11 Creatinine - Serum, creatinine_serum
+12 Direct Bilirubin , direct_bilirubin
+13 Direct Bilirubin - Serum, direct_bilirubin_serum
+14 Eosinophils, eosinophils
+15 Folic Acid assay, folic_acid_assay
+16 Globulin - Serum, globulin_serum
+17 HbA1c, hb_a1c
+18 HDL Cholesterol - Serum, hdl_cholesterol_serum
+19 Hemoglobin, hemoglobin
+20 Indirect Bilirubin - Serum, indirect_bilirubin_serum
+21 LDL / HDL Cholesterol Ratio, ldl_cholesterol_serum
+22 LDL Cholesterol - Serum, ldl_hdl_cholesterol_ratio
+23 Lymphocytes, lymphocytes
+24 M.C.H. m_c_h
+25 M.C.H.C, m_c_h_c
+26 M.C.V., m_c_v
+27 Monocytes, monocytes
+28 Neutrophils, neutrophils
+29 P.C.V., p_c_v
+30 Platelet count, platelet_count
+31 Potassium, potassium
+32 Prostate Specific Antigen (PSA) , prostate_specific_antigen_psa
+33 Random Blood Sugar, random_blood_sugar
+34 R.D.W. CV, r_d_w_cv
+35 SGOT / SGPT Ratio, sgot_sgpt_ratio
+36 Sodium , sodium
+37 T3 (Tri-iodothyronine), t3_tri_iodothyronine
+38 T4 (Thyroxine), t4_thyroxine
+39 Total Bilirubin, total_bilirubin
+40 Total Bilirubin - Serum, total_cholesterol_hdl_cholesterol_ratio
+41 Total Cholesterol / HDL Cholesterol Ratio, total_cholesterol_serum
+42 Total Cholesterol - Serum, total_protein_serum
+43 Total Protein - Serum, total_rbc_count
+44 Total RBC Count, total_wbc_count
+45 Total WBC Count, triglyceride_serum
+46 Triglyceride - Serum, tsh
+47 TSH, uric_acid_serum
+48 Uric Acid - Serum, vitamin_a_retinol
+49 Vit D assay, vitamin_b12_serum
+50 Vitamin A Retinol, vit_d_assay
+51 Vitamin B12, Serum, vldl_cholesterol_serum

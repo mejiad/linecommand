@@ -3,12 +3,10 @@ package com.evoltech.linecommand.service;
 import com.evoltech.linecommand.model.PatientBase;
 import com.evoltech.linecommand.model.PatientScreened;
 import com.evoltech.linecommand.model.Test;
-import com.evoltech.linecommand.repository.PatientRepository;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.json.JSONObject;
 
@@ -52,59 +50,58 @@ public class DownloadService implements DownloadServiceInterface {
     }
 
     public void initializeValues() {
-        values.put("Direct Bilirubin - Serum", -1.0f);
+        values.put("A/G Ratio", -1.0f);
+        values.put("Alanine Transaminase (SGPT/ALT) - Serum", -1.0f);
+        values.put("Albumin - Serum", -1.0f);
+        values.put("Alkaline Phosphatase - Serum", -1.0f);
+        values.put("Aspartate Transaminase (SGOT/AST) - Serum", -1.0f);
+        // "Basophils",
+        // blood_group,
+        values.put("Blood Urea", -1.0f);
         values.put("Blood Urea Nitrogen", -1.0f);
+        values.put("Cholesterol - Serum", -1.0f);
+        values.put("Creatinine - Serum", -1.0f);
+        values.put("Direct Bilirubin", -1.0f);  // ****
+        values.put("Direct Bilirubin - Serum", -1.0f);  // ****
+        values.put("Eosinophils", -1.0f);
+        values.put("Folic Acid assay", -1.0f);
+        values.put("Globulin - Serum", -1.0f);
+        values.put("HbA1c", -1.0f);
+        values.put("HDL Cholesterol - Serum", -1.0f);
+        values.put("Hemoglobin", -1.0f);
+        values.put("Indirect Bilirubin - Serum", -1.0f);
+        values.put("LDL / HDL Cholesterol Ratio", -1.0f);
+        values.put("LDL Cholesterol - Serum", -1.0f);
+        values.put("Lymphocytes", -1.0f);
+        values.put("M.C.H.", -1.0f);
+        values.put("M.C.H.C", -1.0f);
+        values.put("M.C.V.", -1.0f);
+        values.put("Monocytes", -1.0f);
+        values.put("Neutrophils", -1.0f);
+        values.put("P.C.V.", -1.0f);
+        values.put("Platelet count", -1.0f);
+        values.put("Potassium", -1.0f);
+        values.put("Prostate Specific Antigen (PSA)", -1.0f);   // ***
+        values.put("Random Blood Sugar", -1.0f);
+        values.put("R.D.W. CV", -1.0f);
+        values.put("SGOT / SGPT Ratio", -1.0f);
+        values.put("Sodium", -1.0f);                           // *****
+        values.put("T3 (Tri-iodothyronine)", -1.0f);
+        values.put("T4 (Thyroxine)", -1.0f);
         values.put("Total Bilirubin", -1.0f);
         values.put("Total Bilirubin - Serum", -1.0f);
-        values.put("Prostate Specific Antigen (PSA)", -1.0f);
-        values.put("M.C.H.C", -1.0f);
-        values.put("Vit D assay", -1.0f);
-        values.put("Hemoglobin", -1.0f);
-        values.put("Triglyceride - Serum", -1.0f);
-        values.put("Alanine Transaminase (SGPT/ALT) - Serum", -1.0f);
-        values.put("Globulin - Serum", -1.0f);
-        values.put("Total RBC Count", -1.0f);
-        values.put("SGOT / SGPT Ratio", -1.0f);
-        values.put("Random Blood Sugar", -1.0f);
-        values.put("Sodium", -1.0f);
-        values.put("M.C.V.", -1.0f);
-        values.put("TSH", .0f);
-        values.put("Direct Bilirubin", -1.0f);
-        values.put("P.C.V.", -1.0f);
-        values.put("Uric Acid - Serum", -1.0f);
-        values.put("Vitamin A Retinol", -1.0f);
-        values.put("VLDL Cholesterol - Serum", -1.0f);
-        values.put("Basophils", -1.0f);
-        values.put("Albumin - Serum", -1.0f);
-        values.put("LDL Cholesterol - Serum", -1.0f);
-        values.put("Total WBC Count", -1.0f);
         values.put("Total Cholesterol / HDL Cholesterol Ratio", -1.0f);
-        values.put("Creatinine - Serum", -1.0f);
-        values.put("Eosinophils", -1.0f);
-        values.put("Indirect Bilirubin - Serum", -1.0f);
-        values.put("Blood Urea", -1.0f);
-        values.put("Cholesterol - Serum", -1.0f);
-        values.put("R.D.W. CV", -1.0f);
-        values.put("Folic Acid assay", -1.0f);
-        values.put("Lymphocytes", -1.0f);
-        values.put("Alkaline Phosphatase - Serum", -1.0f);
-        values.put("A/G Ratio", -1.0f);
-        values.put("Aspartate Transaminase (SGOT/AST) - Serum", -1.0f);
-        values.put("Vitamin B12", -1.0f);
-        values.put("Serum", -1.0f);
-        values.put("HbA1c", -1.0f);
         values.put("Total Cholesterol - Serum", -1.0f);
-        values.put("Platelet count", -1.0f);
-        values.put("T4 (Thyroxine)", -1.0f);
-        values.put("Neutrophils", -1.0f);
-        values.put("T3 (Tri-iodothyronine)", -1.0f);
-        values.put("LDL / HDL Cholesterol Ratio", -1.0f);
         values.put("Total Protein - Serum", -1.0f);
-        values.put("Blood Group", -1.0f);
-        values.put("Monocytes", -1.0f);
-        values.put("HDL Cholesterol - Serum", -1.0f);
-        values.put("Potassium", -1.0f);
-        values.put("M.C.H.", -1.0f);
+        values.put("Total RBC Count", -1.0f);
+        values.put("Total WBC Count", -1.0f);
+        values.put("Triglyceride - Serum", -1.0f);
+        values.put("TSH", -1.0f);
+        values.put("Uric Acid - Serum", -1.0f);
+        values.put("Vit D assay", -1.0f);
+        values.put("Vitamin A Retinol", -1.0f);
+        values.put("Vitamin B12, Serum", -1.0f);
+        values.put("VLDL Cholesterol - Serum", -1.0f);
     }
 
     public void savePatients(String filename) {
@@ -113,10 +110,7 @@ public class DownloadService implements DownloadServiceInterface {
 
             file.append(getHeader());
 
-            Iterator<PatientScreened> iter = patientsList.iterator();
-
-            while(iter.hasNext()){
-                PatientScreened p = iter.next();
+            for (PatientScreened p : patientsList) {
                 // log.info(p.getPatientId() + " DirectBilirubinSerum: " + p.getDirect_bilirubin_serum());
                 file.append(p.toString());
             }
@@ -213,14 +207,14 @@ public class DownloadService implements DownloadServiceInterface {
                             values.get("Albumin - Serum"),
                             values.get("Alkaline Phosphatase - Serum"),
                             values.get("Aspartate Transaminase (SGOT/AST) - Serum"),
-                            values.get("Basophils"),
+                            "Basophils",
                             blood_group,
                             values.get("Blood Urea"),
                             values.get("Blood Urea Nitrogen"),
                             values.get("Cholesterol - Serum"),
                             values.get("Creatinine - Serum"),
-                            values.get("Direct Bilirubin"),
-                            values.get("Direct Bilirubin - Serum"),
+                            values.get("Direct Bilirubin"),  // ****
+                            values.get("Direct Bilirubin - Serum"),  // ****
                             values.get("Eosinophils"),
                             values.get("Folic Acid assay"),
                             values.get("Globulin - Serum"),
@@ -239,12 +233,11 @@ public class DownloadService implements DownloadServiceInterface {
                             values.get("P.C.V."),
                             values.get("Platelet count"),
                             values.get("Potassium"),
-                            values.get("Prostate Specific Antigen (PSA)"),
+                            values.get("Prostate Specific Antigen (PSA)"),   // ***
                             values.get("Random Blood Sugar"),
                             values.get("R.D.W. CV"),
-                            values.get("Serum"),
                             values.get("SGOT / SGPT Ratio"),
-                            values.get("Sodium"),
+                            values.get("Sodium"),                           // *****
                             values.get("T3 (Tri-iodothyronine)"),
                             values.get("T4 (Thyroxine)"),
                             values.get("Total Bilirubin"),
@@ -259,9 +252,8 @@ public class DownloadService implements DownloadServiceInterface {
                             values.get("Uric Acid - Serum"),
                             values.get("Vit D assay"),
                             values.get("Vitamin A Retinol"),
-                            values.get("Vitamin B12"),
+                            values.put("Vitamin B12, Serum", -1.0f),
                             values.get("VLDL Cholesterol - Serum")
-
                     );
                     patientsList.add(patientScreened);
                 } catch (Exception ex){
@@ -357,7 +349,7 @@ public class DownloadService implements DownloadServiceInterface {
             }
             try {
                 test_name = jsonTest.getString("test_name");
-                log.info("TEST NAME:" + test_name);
+                // log.info("TEST NAME:" + test_name);
                 testnames.add(test_name);
             } catch (JSONException jex) {
                 log.error("Missing test name");
@@ -365,7 +357,7 @@ public class DownloadService implements DownloadServiceInterface {
             try {
                 test_val = jsonTest.getString("test_val");
                 if (test_name.matches("Blood Group")) {
-                    log.error("DENTRO de BLOOD Group:" + test_val);
+                    // log.error("DENTRO de BLOOD Group:" + test_val);
                     test_val = test_val.replaceAll("\"", "\'");
                     blood_group = test_val;
                 } else {
@@ -406,20 +398,17 @@ public class DownloadService implements DownloadServiceInterface {
                     uuid,
                     abnormalFlag,
                     ref_range,
-                    test_datetime.toString(),
+                    test_datetime,
                     test_name,
                     test_val,
                     unit
-                    // patient
             );
             testList.add(panelTest);
-            log.warn(test_name + " Valor:" + test_val);
-            if (!test_name.matches("Blood Group")) {
-                log.warn("Asignando NO Blood group " + test_name + " Valor:" + test_val);
-                values.put(test_name, Float.parseFloat(test_val));
-            } else {
-                log.warn("Asignando Blood group" + " Valor:" + test_val);
+            if (test_name.matches("Blood Group")) {
                 blood_group = test_val;
+            } else {
+                log.warn("Asignando:" + test_name + ": Valor:" + test_val);
+                values.put(test_name, Float.parseFloat(test_val));
             }
         }
         return testList;
@@ -429,183 +418,67 @@ public class DownloadService implements DownloadServiceInterface {
     public String getHeader(){
         StringBuilder sb = new StringBuilder();
 
-        sb.append("patient_id");
-        sb.append(DELIMITER);
-        sb.append("gender");
-        sb.append(DELIMITER);
+        sb.append("patient_id"); sb.append(DELIMITER);
+        sb.append("gender"); sb.append(DELIMITER);
+        sb.append("family_id"); sb.append(DELIMITER);
+        sb.append("block"); sb.append(DELIMITER);
+        sb.append("district"); sb.append(DELIMITER);
+        sb.append("village"); sb.append(DELIMITER);
+        sb.append("birth_date"); sb.append(DELIMITER);
+        sb.append("bmi"); sb.append(DELIMITER);
 
-        sb.append("family_id");
-        sb.append(DELIMITER);
-
-        sb.append("block");
-        sb.append(DELIMITER);
-
-        sb.append("district");
-        sb.append(DELIMITER);
-
-        sb.append("village");
-        sb.append(DELIMITER);
-        sb.append("birth_date");
-        sb.append(DELIMITER);
-        sb.append("bmi");
-        sb.append(DELIMITER);
-        sb.append("a_g_ratio");
-        sb.append(DELIMITER);
-        sb.append("alanine_transaminase_sgpt_alt_serum");
-        sb.append(DELIMITER);
-
-        sb.append("albumin_serum");
-        sb.append(DELIMITER);
-
-        sb.append("alkaline_phosphatase_serum");
-        sb.append(DELIMITER);
-
-        sb.append("aspartate_transaminase_sgot_ast_serum");
-        sb.append(DELIMITER);
-
-        sb.append("basophils");
-        sb.append(DELIMITER);
-
-        sb.append("blood_group");
-        sb.append(DELIMITER);
-
-        sb.append("blood_urea");
-        sb.append(DELIMITER);
-
-        sb.append("blood_urea_nitrogen");
-        sb.append(DELIMITER);
-
-        sb.append("cholesterol_serum");
-        sb.append(DELIMITER);
-
-        sb.append("creatinine_serum");
-        sb.append(DELIMITER);
-
-        sb.append("direct_bilirubin");
-        sb.append(DELIMITER);
-
-        sb.append("direct_bilirubin_serum");
-        sb.append(DELIMITER);
-
-        sb.append("eosinophils");
-        sb.append(DELIMITER);
-
-        sb.append("folic_acid_assay");
-        sb.append(DELIMITER);
-
-        sb.append("globulin_serum");
-        sb.append(DELIMITER);
-
-        sb.append("hb_a1c");
-        sb.append(DELIMITER);
-
-        sb.append("hdl_cholesterol_serum");
-        sb.append(DELIMITER);
-
-        sb.append("hemoglobin");
-        sb.append(DELIMITER);
-
-        sb.append("indirect_bilirubin_serum");
-        sb.append(DELIMITER);
-
-        sb.append("ldl_hdl_cholesterol_ratio");
-        sb.append(DELIMITER);
-
-        sb.append("ldl_cholesterol_serum");
-        sb.append(DELIMITER);
-
-        sb.append("lymphocytes");
-        sb.append(DELIMITER);
-
-        sb.append("m_c_h");
-        sb.append(DELIMITER);
-
-        sb.append("m_c_h_c");
-        sb.append(DELIMITER);
-
-        sb.append("m_c_v");
-        sb.append(DELIMITER);
-
-        sb.append("monocytes");
-        sb.append(DELIMITER);
-
-        sb.append("neutrophils");
-        sb.append(DELIMITER);
-
-        sb.append("p_c_v");
-        sb.append(DELIMITER);
-
-        sb.append("platelet_count");
-        sb.append(DELIMITER);
-
-        sb.append("potassium");
-        sb.append(DELIMITER);
-
-        sb.append("prostate_specific_antigen_psa");
-        sb.append(DELIMITER);
-
-        sb.append("random_blood_sugar");
-        sb.append(DELIMITER);
-
-        sb.append("r_d_w_cv");
-        sb.append(DELIMITER);
-
-        sb.append("serum");
-        sb.append(DELIMITER);
-
-        sb.append("sgot_sgpt_ratio");
-        sb.append(DELIMITER);
-
-        sb.append("sodium");
-        sb.append(DELIMITER);
-
-        sb.append("t3_tri_iodothyronine");
-        sb.append(DELIMITER);
-
-        sb.append("t4_thyroxine");
-        sb.append(DELIMITER);
-
-        sb.append("total_bilirubin");
-        sb.append(DELIMITER);
-
-        sb.append("total_bilirubin_serum");
-        sb.append(DELIMITER);
-
-        sb.append("total_cholesterol_hdl_cholesterol_ratio");
-        sb.append(DELIMITER);
-
-        sb.append("total_cholesterol_serum");
-        sb.append(DELIMITER);
-
-        sb.append("total_protein_serum");
-        sb.append(DELIMITER);
-
-        sb.append("total_rbc_count");
-        sb.append(DELIMITER);
-
-        sb.append("total_wbc_count");
-        sb.append(DELIMITER);
-
-        sb.append("triglyceride_serum");
-        sb.append(DELIMITER);
-
-        sb.append("tsh");
-        sb.append(DELIMITER);
-
-        sb.append("uric_acid_serum");
-        sb.append(DELIMITER);
-
-        sb.append("vit_d_assay");
-        sb.append(DELIMITER);
-
-        sb.append("vitamin_a_retinol");
-        sb.append(DELIMITER);
-
-        sb.append("vitamin_b12");
-        sb.append(DELIMITER);
-
-        sb.append("vldl_cholesterol_serum");
-        sb.append(SEPARATOR);
+        sb.append("a_g_ratio"); sb.append(DELIMITER);
+        sb.append("alanine_transaminase_sgpt_alt_serum"); sb.append(DELIMITER);
+        sb.append("albumin_serum"); sb.append(DELIMITER);
+        sb.append("alkaline_phosphatase_serum"); sb.append(DELIMITER);
+        sb.append("aspartate_transaminase_sgot_ast_serum"); sb.append(DELIMITER);
+        sb.append("basophils"); sb.append(DELIMITER);
+        sb.append("blood_group"); sb.append(DELIMITER);
+        sb.append("blood_urea"); sb.append(DELIMITER);
+        sb.append("blood_urea_nitrogen"); sb.append(DELIMITER);
+        sb.append("cholesterol_serum"); sb.append(DELIMITER);
+        sb.append("creatinine_serum"); sb.append(DELIMITER);
+        sb.append("direct_bilirubin"); sb.append(DELIMITER);
+        sb.append("direct_bilirubin_serum"); sb.append(DELIMITER);
+        sb.append("eosinophils"); sb.append(DELIMITER);
+        sb.append("folic_acid_assay"); sb.append(DELIMITER);
+        sb.append("globulin_serum"); sb.append(DELIMITER);
+        sb.append("hb_a1c"); sb.append(DELIMITER);
+        sb.append("hdl_cholesterol_serum"); sb.append(DELIMITER);
+        sb.append("hemoglobin"); sb.append(DELIMITER);
+        sb.append("indirect_bilirubin_serum"); sb.append(DELIMITER);
+        sb.append("ldl_hdl_cholesterol_ratio"); sb.append(DELIMITER);
+        sb.append("ldl_cholesterol_serum"); sb.append(DELIMITER);
+        sb.append("lymphocytes"); sb.append(DELIMITER);
+        sb.append("m_c_h"); sb.append(DELIMITER);
+        sb.append("m_c_h_c"); sb.append(DELIMITER);
+        sb.append("m_c_v"); sb.append(DELIMITER);
+        sb.append("monocytes"); sb.append(DELIMITER);
+        sb.append("neutrophils"); sb.append(DELIMITER);
+        sb.append("p_c_v"); sb.append(DELIMITER);
+        sb.append("platelet_count"); sb.append(DELIMITER);
+        sb.append("potassium"); sb.append(DELIMITER);
+        sb.append("prostate_specific_antigen_psa"); sb.append(DELIMITER);
+        sb.append("random_blood_sugar"); sb.append(DELIMITER);
+        sb.append("r_d_w_cv"); sb.append(DELIMITER);
+        sb.append("sgot_sgpt_ratio"); sb.append(DELIMITER);
+        sb.append("sodium"); sb.append(DELIMITER);
+        sb.append("t3_tri_iodothyronine"); sb.append(DELIMITER);
+        sb.append("t4_thyroxine"); sb.append(DELIMITER);
+        sb.append("total_bilirubin"); sb.append(DELIMITER);
+        sb.append("total_bilirubin_serum"); sb.append(DELIMITER);
+        sb.append("total_cholesterol_hdl_cholesterol_ratio"); sb.append(DELIMITER);
+        sb.append("total_cholesterol_serum"); sb.append(DELIMITER);
+        sb.append("total_protein_serum"); sb.append(DELIMITER);
+        sb.append("total_rbc_count"); sb.append(DELIMITER);
+        sb.append("total_wbc_count"); sb.append(DELIMITER);
+        sb.append("triglyceride_serum"); sb.append(DELIMITER);
+        sb.append("tsh"); sb.append(DELIMITER);
+        sb.append("uric_acid_serum"); sb.append(DELIMITER);
+        sb.append("vitamin_a_retinol"); sb.append(DELIMITER);
+        sb.append("vitamin_b12_serum"); sb.append(DELIMITER);
+        sb.append("vit_d_assay"); sb.append(DELIMITER);
+        sb.append("vldl_cholesterol_serum"); sb.append(SEPARATOR);
 
         return(sb.toString());
     }
