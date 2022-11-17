@@ -1,0 +1,1 @@
+curl -X GET "https://svmapi.mayamd.ai/api/v1/export_screened_member_data" -H "client_id: EVOL_TECH" -H "key: 2b1d0c961bf940e37b582e88ca22a2fe698e68f651a226eae32c9f8093c70e139e3ef1125c71457e5e1c3c42916f72535b0078818de868e065b728024c40b350" -H "Cookie: GCLB=CPO6hNGJz-vcyQE"

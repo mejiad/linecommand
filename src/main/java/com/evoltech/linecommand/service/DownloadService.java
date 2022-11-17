@@ -100,7 +100,7 @@ public class DownloadService implements DownloadServiceInterface {
         values.put("Uric Acid - Serum", -1.0f);
         values.put("Vit D assay", -1.0f);
         values.put("Vitamin A Retinol", -1.0f);
-        values.put("Vitamin B12, Serum", -1.0f);
+        values.put("Vitamin B12 - Serum", -1.0f);
         values.put("VLDL Cholesterol - Serum", -1.0f);
     }
 
