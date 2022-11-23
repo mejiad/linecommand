@@ -209,9 +209,9 @@ public class PatientScreened {
         this.triglyceride_serum = triglyceride_serum;
         this.tsh = tsh;
         this.uric_acid_serum = uric_acid_serum;
-        this.vit_d_assay = vit_d_assay;
         this.vitamin_a_retinol = vitamin_a_retinol;
         this.vitamin_b12_serum = vitamin_b12_serum;
+        this.vit_d_assay = vit_d_assay;
         this.vldl_cholesterol_serum = vldl_cholesterol_serum;
     }
 
@@ -282,9 +282,9 @@ public class PatientScreened {
         sb.append(this.triglyceride_serum); sb.append(DELIMITER);
         sb.append(this.tsh); sb.append(DELIMITER);
         sb.append(this.uric_acid_serum); sb.append(DELIMITER);
-        sb.append(this.vit_d_assay); sb.append(DELIMITER);
         sb.append(this.vitamin_a_retinol); sb.append(DELIMITER);
         sb.append(this.vitamin_b12_serum); sb.append(DELIMITER);
+        sb.append(this.vit_d_assay); sb.append(DELIMITER);
         sb.append(this.vldl_cholesterol_serum);
         sb.append(SEPARATOR);
 

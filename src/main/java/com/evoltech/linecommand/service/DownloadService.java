@@ -250,9 +250,9 @@ public class DownloadService implements DownloadServiceInterface {
                             values.get("Triglyceride - Serum"),
                             values.get("TSH"),
                             values.get("Uric Acid - Serum"),
-                            values.get("Vit D assay"),
                             values.get("Vitamin A Retinol"),
-                            values.put("Vitamin B12, Serum", -1.0f),
+                            values.get("Vitamin B12 - Serum"),
+                            values.get("Vit D assay"),
                             values.get("VLDL Cholesterol - Serum")
                     );
                     patientsList.add(patientScreened);
