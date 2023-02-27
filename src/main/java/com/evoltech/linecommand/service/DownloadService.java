@@ -419,6 +419,7 @@ public class DownloadService implements DownloadServiceInterface {
         StringBuilder sb = new StringBuilder();
 
         sb.append("patient_id"); sb.append(DELIMITER);
+        sb.append("created_on"); sb.append(DELIMITER);
         sb.append("gender"); sb.append(DELIMITER);
         sb.append("family_id"); sb.append(DELIMITER);
         sb.append("block"); sb.append(DELIMITER);

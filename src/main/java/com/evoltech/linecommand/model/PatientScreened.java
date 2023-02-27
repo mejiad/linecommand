@@ -220,6 +220,8 @@ public class PatientScreened {
         StringBuilder sb = new StringBuilder();
         sb.append(this.patientId); sb.append(DELIMITER);
 
+        sb.append(this.createdOn); sb.append(DELIMITER);
+
         sb.append(this.gender); sb.append(DELIMITER);
 
         sb.append(this.familyId); sb.append(DELIMITER);
